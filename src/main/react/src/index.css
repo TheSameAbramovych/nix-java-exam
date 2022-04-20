@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /*background: url(https://www.wallpapertip.com/wmimgs/13-130894_education-school-apple-learn-ss-.jpg) no-repeat center center fixed;*/
+    /*background: -webkit-linear-gradient(midnightblue, blueviolet);*/
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(138,43,226,1) 0%, rgba(25,25,112,1) 100%);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+form input, button, label, h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}

@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+}
+
+.content {
+    margin: 5vh 5% 0;
+    border-radius: 5px;
+    /*background-color: white;*/
+    height: 95vh;
+    width: 100%;
+}
+
+.dashboard-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    "profile today"
+    "next_event today";
+}
+
+.dashboard-grid div {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0.5%;
+    padding: 0.7rem;
+    border-radius: 5px;
+    backdrop-filter: blur(30px);
+    box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.4);
+}
+
+.profile {
+    grid-area: profile;
+}
+
+.today {
+    grid-area: today;
+}
+
+.next-event {
+    grid-area: next_event;
+}

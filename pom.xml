@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>ua.com.alevel</groupId>
-    <artifactId>nix-java-exam</artifactId>
+    <artifactId>nix_java_exam</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>nix-java-exam</name>
-    <description>nix-java-exam</description>
+    <name>nix_java_exam</name>
+    <description>nix_java_exam</description>
     <properties>
         <java.version>17</java.version>
         <frontend-src-dir>${project.basedir}/src/main/react</frontend-src-dir>

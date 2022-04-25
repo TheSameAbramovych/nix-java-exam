@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "axios": "^0.26.1",
-    "react-calendar": "^3.7.0",
-    "react-particle-effect-button": "^1.0.1"
-  }
-}

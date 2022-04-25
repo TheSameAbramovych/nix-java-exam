@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
-import {NavContext} from "../../context/navState";
+import React from "react";
 import "./Dashboard.css";
-import config from "../../config.json";
-import TokenService from "../../service/TokenService";
+import Calendar from 'react-awesome-calendar';
+import DashboardService from "../../service/DashboardService";
+import randomColor from "randomcolor";
+
 
 const Dashboard = () => {
     const [dashboard, setDashboard] = useState({});
@@ -27,33 +28,34 @@ const Dashboard = () => {
 
     }
 
-    useEffect(() => {
-        getDashboard()
-    }, [])
+    render() {
+        const header = (props) => {
+            return <div><h1></h1></div>
+        }
 
-    return (
-        <div className={'wrapper'}>
-            <div className={'content'}>
-                <div className={'dashboard-grid'}>
-                    <div className={'profile'}>
-                        <h2>Login {dashboard?.login}</h2>
-                        <h2>First Name {dashboard?.firstName}</h2>
-                        <h2>Last Name {dashboard?.lastName}</h2>
-                        <h2>Birth Day {(dashboard?.birthDate === undefined ? "" :
-                            new Date(dashboard.birthDate).toDateString())}</h2>
-                    </div>
-                    <div className={'next-event'}>
-                        <h2>Next-event</h2>
-                    </div>
-                    <div className={'today'}>
-                        <h2>Today</h2>
-                        {/*https://github.com/jquense/react-big-calendar*/}
+        return (
+            <div className={'wrapper'}>
+                <div className={'content'}>
+                    <div className={'dashboard-grid'}>
+                        <div className={'profile'}>
+                            <h2>Login {this.state.dashboard?.login}</h2>
+                            <h2>First Name {this.state.dashboard?.firstName}</h2>
+                            <h2>Last Name {this.state.dashboard?.lastName}</h2>
+                            <h2>Birth Day {(this.state.dashboard?.birthDate === undefined ? "" :
+                                new Date(this.state.dashboard.birthDate).toDateString())}</h2>
+                        </div>
+                        <div className={'next-event'}>
+                            <h2>Next-event</h2>
+                        </div>
+                        <div className={'today'}>
+                            {/*<button onClick={click}>Teeeeest</button>*/}
+                            <Calendar ref={this.calendar} events={this.state.lessons} header={header}/>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
-
+        );
+    }
 }
 
 export default Dashboard;

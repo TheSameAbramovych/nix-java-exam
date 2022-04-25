@@ -13,14 +13,14 @@
 .dashboard-grid {
     height: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-    "profile today"
-    "next_event today";
+    "profile today "
+    "next_event today ";
 }
 
-.dashboard-grid div {
+.dashboard-grid>div {
     background: rgba(255, 255, 255, 0.8);
     margin: 0.5%;
     padding: 0.7rem;
@@ -39,4 +39,24 @@
 
 .next-event {
     grid-area: next_event;
+}
+
+.modeWrapper, .dailyHourTextWrapper>div:nth-child(-n+7), .dailyTimeLine>div:nth-child(-n+8){
+    visibility: hidden;
+    background: blue;
+    position: absolute;
+}
+
+.dailyTimeLineWrapper {
+    overflow-y: inherit !important;
+}
+
+.dailyTimeLine>div:first-child {
+    visibility: inherit !important;
+    position: static !important;
+}
+
+.dayEvent {
+    width: 100% !important;
+    left: 0 !important;
 }

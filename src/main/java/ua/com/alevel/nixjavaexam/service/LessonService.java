@@ -3,7 +3,7 @@ package ua.com.alevel.nixjavaexam.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ua.com.alevel.nixjavaexam.entity.Lesson;
-import ua.com.alevel.nixjavaexam.entity.Teacher;
+import ua.com.alevel.nixjavaexam.entity.Student;
 import ua.com.alevel.nixjavaexam.entity.User;
 import ua.com.alevel.nixjavaexam.repository.LessonRepository;
 

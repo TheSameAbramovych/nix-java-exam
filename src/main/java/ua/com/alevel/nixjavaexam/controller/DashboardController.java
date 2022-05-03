@@ -26,12 +26,20 @@ public class DashboardController {
     private final UserService userService;
     private final LessonService lessonService;
 
-    @GetMapping("/dashboard")
-    public DashboardDto dashboard(@AuthenticationPrincipal AuthUser authUser) {
+    @RequestMapping(path = "/dashboard", method = RequestMethod.GET)
+    public DashboardDto dashboardStudent(@AuthenticationPrincipal AuthUser authUser) {
         User user = userService.findByLogin(authUser.getUsername());
-        Set<Lesson> lessons = lessonService.findLessonByUser(user);
-        return new DashboardDto(user.getLogin(), user.getFirstName(),
-                user.getLastName(), user.getEmail(), user.getBirthDate(), lessons);
+
+        Set<Lesson> lessons;
+        if (STUDENT.equals(user.getRole())) {
+            lessons = lessonService.findLessonByStudent((Student) user);
+
+        } else {
+            lessons = lessonService.findLessonByTeacher(user);
+        }
+
+        return new DashboardDto(new ProfileDto(user.getFirstName(), user.getLastName(), user.getEmail(),
+                user.getBirthDate()), lessons);
     }
 
 }

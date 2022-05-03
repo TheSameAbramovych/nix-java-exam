@@ -1,9 +1,8 @@
 package ua.com.alevel.nixjavaexam.entity;
 
 public enum Role {
-    USER,
-    OPERATOR,
-    SUPPORT,
+    STUDENT,
+    TEACHER,
     ADMIN;
 
     public String getName(){

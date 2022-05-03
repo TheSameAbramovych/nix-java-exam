@@ -4,7 +4,5 @@ import ua.com.alevel.nixjavaexam.entity.Lesson;
 
 import java.util.Set;
 
-public record DashboardDto(String login, String firstName, String lastName,
-                           String email, Date birthDate,
-                           Set<Lesson> lessons) {
+public record DashboardDto(ProfileDto profile, Set<Lesson> lessons) {
 }

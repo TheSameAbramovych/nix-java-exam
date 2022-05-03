@@ -14,11 +14,11 @@ import java.util.Set;
 public class LessonService {
     private LessonRepository lessonRepository;
 
-    public Set<Lesson> findLessonByUser(User user) {
-        if (user instanceof Teacher) {
-            return lessonRepository.findLessonByTeacher(user);
-        } else {
-            return null;
-        }
+    public Set<Lesson> findLessonByTeacher(User user) {
+        return lessonRepository.findLessonByTeacher(user);
+    }
+
+    public Set<Lesson> findLessonByStudent(Student user) {
+        return lessonRepository.findLessonByGroup(user.getGroup());
     }
 }

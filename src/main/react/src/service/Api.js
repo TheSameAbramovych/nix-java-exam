@@ -12,6 +12,8 @@ instance.interceptors.request.use(
     (config) => {
         if (TokenService.getToken()) {
             config.headers["Authorization"] = "Bearer " + TokenService.getToken();
+            config.headers["ZoneName"] = Intl.DateTimeFormat().resolvedOptions().timeZone
+            ;
         }
         return config;
     },
